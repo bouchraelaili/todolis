@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" >
+    <title>ToDo list</title>
+    <style type="text/css">
+    	    body{
+    	background-color: #6F1E51;
+    }
+   		#chk {
+   			color: red;
+   		} 
+
+    	#chk:checked ~ p{
+   
+    text-decoration: line-through;
+    text-decoration-color: red;
+
+ }
+
+h1{
+	font-family: "Ink Free", Gadget, sans-serif;
+	color:white; 
+	font-size: 60px;
+}
+	
+input[type=button] {
+  background-color: white;
+  color:#6F1E51 ;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 130px;
+  outline: none;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Ink Free", Gadget, sans-serif;
+
+}
+
+input[type=button]:hover {
+  background-color: #1D1E1E;
+}
+.All{
+	background-color: white;
+	width: 500px;
+	height: 300px;
+	margin-top: 8%;
+}
+input[type=text] {
+width: 400px;
+height: 30px;
+outline: none;
+margin-bottom: 10%;
+margin-top:5%;
+border-radius: 8px;
+color: #6F1E51;
+border-color: #6F1E51;
+
+}
+span {
+    display: flex;
+    align-items: center;
+    padding-left: 39.2%;
+   font-family: "Ink Free", Gadget, sans-serif;
+	color:white; 
+	font-size: 30px;
+}
+    </style>
+</head>
+<body>
+<center><h1>ToDo List</h1>
+<div class="first">
+<input type="text" id="aa"></center>
+<center><input type="button" value="Add" onclick="addTask()"></center>
+</div>
+<div id="result">
+
+</div>
+
+
+
+<script >
+	function addTask(){
+    let task = document.getElementById("aa").value;
+    let span = document.createElement("span");
+    let check = document.createElement("input");
+    check.type = "checkbox";
+    check.id = "chk";
+    let p = document.createElement("p");
+    let txt = document.createTextNode(task);
+
+    p.appendChild(txt);
+    span.appendChild(check);
+    span.appendChild(p);
+
+    document.getElementById("result").appendChild(span);
+
+
+}
+</script>
+</body>
+</html>
